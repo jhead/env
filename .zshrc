@@ -6,6 +6,7 @@ if ! zgen saved; then
     echo "Creating a zgen save"
 
     # oh-my-zsh but less bloat
+    $(zgen oh-my-zsh)
     zgen load ~/.zgen/robbyrussell/oh-my-zsh-master/lib/theme-and-appearance.zsh
     zgen load ~/.zgen/robbyrussell/oh-my-zsh-master/lib/clipboard.zsh
     zgen load ~/.zgen/robbyrussell/oh-my-zsh-master/lib/key-bindings.zsh
@@ -18,7 +19,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-autosuggestions
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-completions src
-    zgen load ~/.zcustom/custom.zsh-theme
+    zgen load ~/.env/.zcustom/custom.zsh-theme
 
     # must be last
     zgen load zsh-users/zsh-syntax-highlighting
@@ -29,6 +30,7 @@ fi
 
 # paths
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
+PATH="$PATH:$HOME/bin"
 
 # aliases
 alias ls='ls -G'
@@ -38,3 +40,4 @@ alias nf=neofetch
 
 # envs
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export N_PREFIX=$HOME
